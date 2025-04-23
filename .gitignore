@@ -1,0 +1,6 @@
+.env
+.env.example
+.idx/dev.nix
+.vscode/sftp.json
+.htaccess
+.vscode/settings.json
