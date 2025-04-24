@@ -27,24 +27,32 @@ use App\Events\InventarioSalida;
 
 class ProductosController extends Controller
 {
-public function mostrarDetalles($id)
-{
-    $productos = Producto::with([
-        'unidadCompra',
-        'linea',
-        'marca',
-        'modelo',
-        'talla',
-        'color',
-        'departamento',
-        'ubicacion',
-        'grupo',
-        'corte',
-        'nivel',
-        'precios',
-        'stock'
-        ])->findOrFail($id);
+    public function mostrarDetalles($id)
+    {
+        $producto = Producto::with([
+            'unidadCompra',
+            'linea',
+            'marca',
+            'modelo',
+            'talla',
+            'color',
+            'departamento',
+            'ubicacion',
+            'grupo',
+            'corte',
+            'nivel',
+            'precios',
+            'stock'
+            ])->find($id);
 
-        return view('productos/detalles', compact('productos'));
+            return view('productos/detalles', compact('producto'));
+    }
+    public function mostrarStock()
+    {
+        $stock = Stock::with([
+            'productoId',
+            ])->orderBy('existencias', 'asc')->get();
+
+            return view('stock/all', compact('stock'));
     }
 }

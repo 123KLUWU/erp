@@ -63,6 +63,8 @@ Route::middleware('auth')->group(function () {
 
     //pruebas
     Route::get('/pruebas', [PruebasController::class, 'index'])->name('pruebas');
+
+    Route::get('/stock', [ProductosController::class, 'mostrarStock'])->name('stock.index');
 });
 
 //las rutas que no estan agrupadas estan disponibles para todos los usuarios

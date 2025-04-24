@@ -26,6 +26,7 @@ class KardexController extends Controller
     {
         $movimiento = Kardex::with([
             'productoId',
+            'userId'
         ])->find($id);
 
         if (!$movimiento) {

@@ -50,7 +50,7 @@
                     </button>
                     <button class="btn btn-warning">
                         <a class="btn btn-link-dark" href="{{ route('productos.detalles', $producto->id) }}">
-                            ver detalles
+                            Ver detalles
                         </a>
                     </button>
                     </div>

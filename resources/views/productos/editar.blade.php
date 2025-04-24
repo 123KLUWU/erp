@@ -14,13 +14,14 @@
                         id="clave"
                         placeholder=""
                         maxlength="5"
+                        minlength="5"
                         aria-describedby="clavesmall"
                         value="{{ old('clave', $producto->clave) }}" />
                     @error('clave')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                     <small id="clavesmall" class="form-text text-muted">
-                        Solo se admiten números de máximo 5 digitos
+                        Solo se admiten números de 5 digitos
                     </small>
                 </div>
 
@@ -34,13 +35,14 @@
                         id="codigo"
                         placeholder=""
                         maxlength="5"
+                        minlength="5"
                         aria-describedby="codigosmall"
                         value="{{ old('codigo', $producto->codigo) }}" />
                     @error('codigo')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                     <small id="codigosmall" class="form-text text-muted">
-                        Solo se admiten números de máximo 5 digitos
+                        Solo se admiten números de 5 digitos
                     </small>
                 </div>
 
